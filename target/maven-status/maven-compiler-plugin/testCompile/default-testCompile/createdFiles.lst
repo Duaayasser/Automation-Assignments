@@ -1,0 +1,6 @@
+task\Inventory\InventoryTests.class
+task\Login\LoginTests.class
+task\Login\JsonDataProvider.class
+task\Login\JsonDataProvider$1.class
+task\Cart\CartTests.class
+task\Base\BaseTests.class
