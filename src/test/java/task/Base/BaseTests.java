@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import task.Pages.LoginPage;
+import task.Utils.WindowManager;
 
 public class BaseTests {
 
@@ -29,5 +30,8 @@ public class BaseTests {
         if (driver != null) {
             driver.quit();
         }
+    }
+    public WindowManager getWindowManager() {
+        return new WindowManager(driver);
     }
 }
