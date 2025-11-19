@@ -20,7 +20,7 @@ public class InventoryTests extends BaseTests{
        assertEquals(itemCount, 6,"Incorrect items count");
     }
     @Test(dataProvider = "validData", dataProviderClass = JsonDataProvider.class)
-    public void socialIconsTest(LoginData data){
+    public void linkenInIconTest(LoginData data){
         loginPage.setUsername(data.username);
         loginPage.setPassword(data.password);
         InventoryPage inventoryPage = loginPage.loginClick();
@@ -30,6 +30,26 @@ public class InventoryTests extends BaseTests{
         assertTrue(currURL.contains("linkedin"),"The URL is incorrect");
     }
     @Test(dataProvider = "validData", dataProviderClass = JsonDataProvider.class)
+    public void facebookIconTest(LoginData data){
+        loginPage.setUsername(data.username);
+        loginPage.setPassword(data.password);
+        InventoryPage inventoryPage = loginPage.loginClick();
+        inventoryPage.clickFacebookIcon();
+        getWindowManager().switchToNewTab();
+        String currURL = driver.getCurrentUrl();
+        assertTrue(currURL.contains("facebook"),"The URL is incorrect");
+    }
+    @Test(dataProvider = "validData", dataProviderClass = JsonDataProvider.class)
+    public void twitterIconTest(LoginData data){
+        loginPage.setUsername(data.username);
+        loginPage.setPassword(data.password);
+        InventoryPage inventoryPage = loginPage.loginClick();
+        inventoryPage.clickTwitterIcon();
+        getWindowManager().switchToNewTab();
+        String currURL = driver.getCurrentUrl();
+        assertTrue(currURL.contains("x.com"),"The URL is incorrect");
+    }
+    @Test(dataProvider = "validData", dataProviderClass = JsonDataProvider.class)
     public void emptyCartTest(LoginData data){
         loginPage.setUsername(data.username);
         loginPage.setPassword(data.password);
@@ -37,11 +57,5 @@ public class InventoryTests extends BaseTests{
         boolean emptyList = inventoryPage.isCartEmpty();
         assertTrue(emptyList,"The cart is not empty");
     }
-    @Test(dataProvider = "validData", dataProviderClass = JsonDataProvider.class)
-    public void addItemsTest(LoginData data){
-        loginPage.setUsername(data.username);
-        loginPage.setPassword(data.password);
-        InventoryPage inventoryPage = loginPage.loginClick();
-        inventoryPage.addToCart();
-    }
+    
 }

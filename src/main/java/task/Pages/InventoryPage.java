@@ -16,13 +16,16 @@ public class InventoryPage {
     private By cartIcon = By.className("shopping_cart_link");
     private By inventoryItems = By.className("inventory_item");
     private By linkedInIcon = By.className("social_linkedin");
+    private By facebookIcon = By.className("social_facebook");
+    private By twitterIcon = By.className("social_twitter");
     private By cartBadge = By.className("shopping_cart_badge");
-    private By item1 = By.id("add-to-cart-sauce-labs-backpack");
-    private By item2 = By.id("add-to-cart-sauce-labs-bolt-t-shirt");
-    private By item3 = By.id("add-to-cart-sauce-labs-onesie");
+    private By backpackButton = By.xpath("//button[contains(@id,'sauce-labs-backpack')]");
+private By tshirtButton   = By.xpath("//button[contains(@id,'sauce-labs-bolt-t-shirt')]");
+private By onesieButton   = By.xpath("//button[contains(@id,'sauce-labs-onesie')]");
+
     public InventoryPage(WebDriver driver){
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(pageTitle));
     }
     public String getTitle(){
@@ -38,17 +41,43 @@ public class InventoryPage {
         driver.findElement(linkedInIcon).click();
         return new LinkedInPage(driver);
     }
+    public FacebookPage clickFacebookIcon(){
+        driver.findElement(facebookIcon).click();
+        return new FacebookPage(driver);
+    }
+    public TwitterPage clickTwitterIcon(){
+        driver.findElement(twitterIcon).click();
+        return new TwitterPage(driver);
+    }
     public boolean isCartEmpty(){
         List<WebElement> badge = driver.findElements(cartBadge);
-        return badge.size() == 0;
+        return badge.isEmpty();
     }
     public void addToCart(){
-        driver.findElement(item1).click();
-        driver.findElement(item2).click();
-        driver.findElement(item3).click();
+        driver.findElement(backpackButton).click();
+        driver.findElement(tshirtButton).click();
+        driver.findElement(onesieButton).click();
     }
+    public String getButton1Text() {
+    wait.until(ExpectedConditions.visibilityOfElementLocated(backpackButton));
+    return driver.findElement(backpackButton).getText();
+}
+
+public String getButton2Text() {
+    wait.until(ExpectedConditions.visibilityOfElementLocated(tshirtButton));
+    return driver.findElement(tshirtButton).getText();
+}
+
+public String getButton3Text() {
+    wait.until(ExpectedConditions.visibilityOfElementLocated(onesieButton));
+    return driver.findElement(onesieButton).getText();
+}
+
+
+
     public CartPage goToCart(){
         driver.findElement(cartIcon).click();
         return new CartPage(driver);
     }
+
 }

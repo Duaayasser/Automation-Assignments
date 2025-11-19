@@ -3,25 +3,14 @@
 <suite thread-count="1" name="Failed suite [Surefire suite]" verbose="0">
   <test thread-count="1" name="Surefire test(failed)" verbose="0">
     <classes>
-      <class name="task.Inventory.InventoryTests">
-        <methods>
-          <include name="addItemsTest" invocation-numbers="0"/>
-          <include name="goHome"/>
-          <include name="tearDown"/>
-          <include name="socialIconsTest"/>
-          <include name="inventoryTest"/>
-          <include name="setUp"/>
-          <include name="emptyCartTest"/>
-        </methods>
-      </class> <!-- task.Inventory.InventoryTests -->
-      <class name="task.Login.LoginTests">
+      <class name="task.Cart.CartTests">
         <methods>
           <include name="goHome"/>
           <include name="tearDown"/>
+          <include name="removeItemFromCartTest" invocation-numbers="0"/>
           <include name="setUp"/>
-          <include name="validLogin" invocation-numbers="0"/>
         </methods>
-      </class> <!-- task.Login.LoginTests -->
+      </class> <!-- task.Cart.CartTests -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->

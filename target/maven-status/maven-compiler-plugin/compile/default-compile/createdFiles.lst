@@ -1,6 +1,8 @@
-task\Pages\LinkedInPage.class
 task\Utils\LoginData.class
 task\Pages\CartPage.class
-task\Pages\InventoryPage.class
+task\Pages\TwitterPage.class
 task\Pages\LoginPage.class
 task\Utils\WindowManager.class
+task\Pages\LinkedInPage.class
+task\Pages\FacebookPage.class
+task\Pages\InventoryPage.class

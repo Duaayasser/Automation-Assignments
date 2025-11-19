@@ -17,9 +17,23 @@ public class CartTests extends BaseTests{
         InventoryPage inventoryPage = loginPage.loginClick();
         inventoryPage.addToCart();
         CartPage cartPage = inventoryPage.goToCart();
-        assertTrue(cartPage.isItem1Exist(),"Item 1 is not exist");
-        assertTrue(cartPage.isItem2Exist(),"Item 2 is not exist");
-        assertTrue(cartPage.isItem3Exist(),"Item 3 is not exist");
+        assertTrue(cartPage.isBackPackExist(),"The BackPack is not exist");
+        assertTrue(cartPage.isBoltTshirtExist(),"The Bolt T-shirt is not exist");
+        assertTrue(cartPage.isOnesieExist(),"The onesie is not exist");
+    }
+    @Test(dataProvider = "validData", dataProviderClass = JsonDataProvider.class)
+    public void removeItemFromCartTest(LoginData data){
+        loginPage.setUsername(data.username);
+        loginPage.setPassword(data.password);
+        InventoryPage inventoryPage = loginPage.loginClick();
+        inventoryPage.addToCart();
+        CartPage cartPage = inventoryPage.goToCart();
+        cartPage.removeTshirt();
+        cartPage.continueShoppingClick();
+        inventoryPage = new InventoryPage(driver); //to return new inventory page with the new changes
+        assertTrue(inventoryPage.getButton2Text().contains("Add to cart"));
+        assertTrue(inventoryPage.getButton1Text().contains("Remove"));
+        assertTrue(inventoryPage.getButton3Text().contains("Remove")); 
 
     }
 }
