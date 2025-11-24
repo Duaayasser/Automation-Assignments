@@ -7,6 +7,7 @@
         <methods>
           <include name="goHome"/>
           <include name="tearDown"/>
+          <include name="cleanTabs"/>
           <include name="removeItemFromCartTest" invocation-numbers="0"/>
           <include name="setUp"/>
         </methods>

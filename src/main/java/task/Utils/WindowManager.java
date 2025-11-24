@@ -1,6 +1,11 @@
 package task.Utils;
 
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WindowManager {
 
@@ -11,15 +16,20 @@ public class WindowManager {
         navigation = driver.navigate();
     }
 
-    public void switchToNewTab() {
-    String currentTab = driver.getWindowHandle();
-    for (String tab : driver.getWindowHandles()) {
-        if (!tab.equals(currentTab)) {
-            driver.switchTo().window(tab);
-            break;
-        }
-    }
-} 
+  public void switchToNewTab() {
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+    wait.until(driver -> driver.getWindowHandles().size() > 1);
+
+    List<String> tabs = new ArrayList<>(driver.getWindowHandles());
+    driver.switchTo().window(tabs.get(tabs.size() - 1));
+
+    
+    wait.until(driver1 -> !driver1.getCurrentUrl().equals("about:blank"));
+}
+
+
+
 public void goBack(){
         navigation.back();
     }

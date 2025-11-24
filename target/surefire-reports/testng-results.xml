@@ -2,31 +2,35 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-19T16:59:56 GMT+02:00" name="Surefire suite" finished-at="2025-11-19T17:00:10 GMT+02:00" duration-ms="14427">
+  <suite started-at="2025-11-24T23:22:07 GMT+02:00" name="Surefire suite" finished-at="2025-11-24T23:22:23 GMT+02:00" duration-ms="15924">
     <groups>
     </groups>
-    <test started-at="2025-11-19T16:59:56 GMT+02:00" name="Surefire test" finished-at="2025-11-19T17:00:10 GMT+02:00" duration-ms="14427">
+    <test started-at="2025-11-24T23:22:07 GMT+02:00" name="Surefire test" finished-at="2025-11-24T23:22:23 GMT+02:00" duration-ms="15924">
       <class name="task.Cart.CartTests">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:task.Cart.CartTests@60611244]" started-at="2025-11-19T16:59:56 GMT+02:00" name="setUp" finished-at="2025-11-19T16:59:57 GMT+02:00" duration-ms="1588" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:task.Cart.CartTests@71c8becc]" started-at="2025-11-24T23:22:07 GMT+02:00" name="setUp" finished-at="2025-11-24T23:22:09 GMT+02:00" duration-ms="1885" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="goHome()[pri:0, instance:task.Cart.CartTests@60611244]" started-at="2025-11-19T16:59:57 GMT+02:00" name="goHome" finished-at="2025-11-19T16:59:58 GMT+02:00" duration-ms="1057" status="PASS">
+        <test-method is-config="true" signature="goHome()[pri:0, instance:task.Cart.CartTests@71c8becc]" started-at="2025-11-24T23:22:09 GMT+02:00" name="goHome" finished-at="2025-11-24T23:22:10 GMT+02:00" duration-ms="1232" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- goHome -->
-        <test-method signature="removeItemFromCartTest(task.Utils.LoginData)[pri:0, instance:task.Cart.CartTests@60611244]" started-at="2025-11-19T16:59:58 GMT+02:00" name="removeItemFromCartTest" data-provider="validData" finished-at="2025-11-19T17:00:10 GMT+02:00" duration-ms="11417" status="PASS">
+        <test-method signature="removeItemFromCartTest(task.Utils.LoginData)[pri:0, instance:task.Cart.CartTests@71c8becc]" started-at="2025-11-24T23:22:10 GMT+02:00" name="removeItemFromCartTest" data-provider="validData" finished-at="2025-11-24T23:22:23 GMT+02:00" duration-ms="12324" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[task.Utils.LoginData@e6516e]]>
+                <![CDATA[task.Utils.LoginData@72c927f1]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- removeItemFromCartTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:task.Cart.CartTests@60611244]" started-at="2025-11-19T17:00:10 GMT+02:00" name="tearDown" finished-at="2025-11-19T17:00:10 GMT+02:00" duration-ms="226" status="PASS">
+        <test-method is-config="true" signature="cleanTabs()[pri:0, instance:task.Cart.CartTests@71c8becc]" started-at="2025-11-24T23:22:23 GMT+02:00" name="cleanTabs" finished-at="2025-11-24T23:22:23 GMT+02:00" duration-ms="12" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanTabs -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:task.Cart.CartTests@71c8becc]" started-at="2025-11-24T23:22:23 GMT+02:00" name="tearDown" finished-at="2025-11-24T23:22:23 GMT+02:00" duration-ms="269" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

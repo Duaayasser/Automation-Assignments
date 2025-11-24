@@ -1,8 +1,12 @@
 package task.Base;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
@@ -24,6 +28,22 @@ public class BaseTests {
         driver.get("https://www.saucedemo.com/");
         loginPage = new LoginPage(driver);   
     }
+
+    @AfterMethod
+public void cleanTabs() {
+    List<String> tabs = new ArrayList<>(driver.getWindowHandles());
+    String firstTab = tabs.get(0);
+
+    for (String tab : tabs) {
+        if (!tab.equals(firstTab)) {
+            driver.switchTo().window(tab);
+            driver.close();
+        }
+    }
+
+    driver.switchTo().window(firstTab);
+}
+
 
     @AfterClass
     public void tearDown(){

@@ -1,7 +1,11 @@
 package task.Pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CartPage {
     private WebDriver driver;
@@ -22,9 +26,12 @@ public class CartPage {
     public boolean isOnesieExist(){
         return !driver.findElements(onesie).isEmpty();
     }
-    public void removeTshirt(){
-        driver.findElement(removeTshirt).click();
-    }
+    public void removeTshirt() {
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+    wait.until(ExpectedConditions.elementToBeClickable(removeTshirt));
+    driver.findElement(removeTshirt).click();
+}
+
     public InventoryPage continueShoppingClick(){
         driver.findElement(continueShopping).click();
         return new InventoryPage(driver);
